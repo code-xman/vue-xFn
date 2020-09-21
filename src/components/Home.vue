@@ -52,6 +52,15 @@ export default {
               type: 'virtualRollingThree'
             }
           ]
+        },
+        {
+          title: '组件传值',
+          btnList: [
+            {
+              name: '组件传值 Demo_1',
+              type: 'transmitOne'
+            }
+          ]
         }
       ]
     }
