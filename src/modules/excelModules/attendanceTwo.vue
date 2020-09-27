@@ -46,7 +46,7 @@
 <script>
 // 引入xlsx
 import XLSX from 'xlsx'
-import AttendanceTable from '@/excelComponents/attendanceTable'
+import AttendanceTable from '@/globalComponents/attendanceTable'
 export default {
   name: 'attendanceTwo',
   components: { AttendanceTable },
