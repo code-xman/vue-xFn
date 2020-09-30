@@ -31,4 +31,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.bottomBtn {
+  margin-top: 10px;
+  border-top: 2px solid #ebeef5;
+  padding-top: 10px;
+}
+</style>

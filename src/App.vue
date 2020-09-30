@@ -12,6 +12,11 @@ export default {
 </script>
 
 <style>
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,16 +24,8 @@ export default {
   /* text-align: center; */
   color: #2c3e50;
   /* margin-top: 20px; */
-  padding: 20px;
+  /* padding: 20px; */
   height: 100%;
-}
-.title {
-  margin: 0 0 10px;
-  border-bottom: 1px solid #ccc;
-  padding: 5px 0;
-  height: 24px;
-  line-height: 24px;
-  font-size: 24px;
 }
 
 .btnList {

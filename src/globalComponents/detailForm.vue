@@ -5,6 +5,7 @@
       class="form"
       :rules="rules"
       :model="valObj"
+      :label-width="labelWidth"
       flex="main:justify"
     >
       <template v-for="(item, index) in list">
@@ -14,7 +15,6 @@
           :key="index"
           :prop="item.name"
           :label="item.label"
-          flex="main:left box:first"
         >
           <!--
             tag 基础组件名
@@ -49,6 +49,10 @@ export default {
     rules: {
       type: Object,
       default: () => {}
+    },
+    labelWidth: {
+      type: String,
+      default: '100px'
     }
   },
   watch: {
@@ -72,12 +76,21 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+// .detailForm {
+//   border: 1px solid #ebeef5;
+// }
 .form {
   margin: 20px;
+  flex-wrap: wrap;
 }
 .item {
-  width: 50%;
+  width: 45%;
   padding: 0 20px;
+}
+
+/deep/ .el-select--small,
+/deep/ .el-date-editor {
+  width: 100%;
 }
 </style>

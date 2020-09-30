@@ -43,6 +43,14 @@ export default {
 </script>
 
 <style scoped>
+.title {
+  /* margin: 0 0 10px; */
+  border-bottom: 2px solid #ebeef5;
+  padding: 10px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 24px;
+}
 .top /deep/ .go-home {
   padding: 5px 10px;
   font-size: 12px;

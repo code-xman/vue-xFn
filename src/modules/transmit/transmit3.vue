@@ -1,11 +1,12 @@
 <template>
   <div class="transmitThree" flex="dir:top">
-    <detailForm
-      flex-box="1"
-      :list="list"
-      :rules="rules"
-      :valueObj.sync="valueObj"
-    ></detailForm>
+    <div class="detail-form-box" flex-box="1">
+      <detailForm
+        :list="list"
+        :rules="rules"
+        :valueObj.sync="valueObj"
+      ></detailForm>
+    </div>
     <bottomBtn
       flex-box="0"
       :btnList="btnList"
@@ -59,6 +60,58 @@ export default {
           options: {
             optionsList: this.$store.state.assetsData.GENDER_TYPE
           }
+        },
+        {
+          name: 'date',
+          label: '日期',
+          tag: 'v-date-picker',
+          options: {
+            type: 'date',
+            placeholder: '选择日期',
+            'value-format': 'timestamp'
+          }
+        },
+        {
+          name: 'daterange',
+          label: '一段日期',
+          tag: 'v-date-picker',
+          options: {
+            type: 'daterange',
+            'range-separator': '至',
+            'start-placeholder': '开始日期',
+            'end-placeholder': '结束日期',
+            'value-format': 'timestamp'
+          }
+        },
+        {
+          name: 'datetime',
+          label: '精确时间',
+          tag: 'v-date-picker',
+          options: {
+            type: 'datetime',
+            placeholder: '选择时间',
+            'value-format': 'timestamp'
+          }
+        },
+        {
+          name: 'datetimerange',
+          label: '一段时间',
+          tag: 'v-date-picker',
+          options: {
+            type: 'datetimerange',
+            'range-separator': '至',
+            'start-placeholder': '开始日期',
+            'end-placeholder': '结束日期',
+            'value-format': 'timestamp'
+          }
+        },
+        {
+          name: 'vocation',
+          label: '职业',
+          tag: 'v-radio',
+          options: {
+            radioList: this.$store.state.assetsData.VOCATION
+          }
         }
       ]
     },
@@ -70,7 +123,15 @@ export default {
       return obj
     },
     bottomBtnClick (type) {
-      console.log('type :>> ', type)
+      switch (type) {
+        case 'getData':
+          console.log('this.valueObj :>> ', this.valueObj)
+          break
+
+        default:
+          console.log('type :>> ', type)
+          break
+      }
     }
   }
 }
@@ -79,5 +140,9 @@ export default {
 <style scoped>
 .transmitThree {
   height: 100%;
+}
+.detail-form-box {
+  overflow: auto;
+  border: 1px solid #ebeef5;
 }
 </style>

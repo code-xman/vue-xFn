@@ -31,8 +31,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.v-select {
-  width: 100%;
-}
-</style>
+<style scoped></style>

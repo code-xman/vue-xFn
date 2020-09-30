@@ -1,7 +1,9 @@
 <template>
-  <div class="">
-    <TOP :title="$route.meta.title" />
-    <router-view></router-view>
+  <div class="hello" flex="dir:top">
+    <TOP :title="$route.meta.title" flex-box="0" />
+    <div class="content" flex-box="1">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -21,4 +23,12 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.hello {
+  height: 100%;
+}
+.content {
+  padding: 20px;
+  overflow: auto;
+}
+</style>
