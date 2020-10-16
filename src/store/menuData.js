@@ -1,5 +1,6 @@
 const menuData = {
   btnGroups: [
+    // 表格导入导出
     {
       title: '表格导入导出',
       btnList: [
@@ -13,6 +14,7 @@ const menuData = {
         }
       ]
     },
+    // 虚拟滚动
     {
       title: '虚拟滚动',
       btnList: [
@@ -30,6 +32,7 @@ const menuData = {
         }
       ]
     },
+    // 组件传值
     {
       title: '组件传值',
       btnList: [
@@ -44,6 +47,10 @@ const menuData = {
         {
           name: '组件传值 Demo_3',
           type: 'transmitThree'
+        },
+        {
+          name: '组件传值 Demo_4',
+          type: 'transmitFour'
         }
       ]
     }
