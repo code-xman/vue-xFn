@@ -1,6 +1,6 @@
 <template>
   <div class="transmitFive" flex="dir:top">
-    <p class="color-text">多层组件传值,provide/inject解决方案</p>
+    <p class="color-text" flex-box="0">多层组件传值,provide/inject解决方案</p>
     <div class="tabs-box" flex-box="1">
       <el-tabs v-model="activeName">
         <el-tab-pane
@@ -102,6 +102,7 @@ export default {
 } */
 
 .color-text {
+  margin: 0;
   padding: 8px 16px;
   background-color: #e2f0ff;
   color: #409eff;
