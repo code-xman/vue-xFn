@@ -71,6 +71,13 @@ export default {
     valChange (val, name) {
       this.valObj[name] = val
       this.$emit('update:valueObj', this.valObj)
+    },
+    validate () {
+      return new Promise((resolve, reject) => {
+        this.$refs.form.validate(valid => {
+          resolve(valid)
+        })
+      })
     }
   }
 }
