@@ -14,11 +14,6 @@ export default {
   components: { TOP },
   data () {
     return {}
-  },
-  mounted () {
-    this.$router.push({
-      name: 'Home'
-    })
   }
 }
 </script>
