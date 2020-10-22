@@ -55,6 +55,10 @@ const menuData = {
         {
           name: '组件传值 Demo_5',
           type: 'transmitFive'
+        },
+        {
+          name: '组件传值 Demo_6',
+          type: 'transmitSix'
         }
       ]
     }

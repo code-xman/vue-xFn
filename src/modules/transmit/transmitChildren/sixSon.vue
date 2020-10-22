@@ -1,5 +1,5 @@
 <template>
-  <div class="fiveSon1">
+  <div class="sixSon">
     <detailForm
       ref="detailForm"
       :list="list"
@@ -13,14 +13,6 @@
 import detailForm from '@/globalComponents/detailForm'
 export default {
   components: { detailForm },
-  props: {
-    tabDataName: {
-      type: String,
-      required: true
-    }
-  },
-  // inject 获取父组件provide里的数据；使用方法同data(eg. this.tabData)
-  inject: ['tabData'],
   data () {
     return {
       rules: {
@@ -84,11 +76,8 @@ export default {
     },
     async validate () {
       const res = await this.$refs.detailForm.validate()
-      if (res) {
-        console.log(`${this.tabDataName}赋值`)
-        this.tabData[this.tabDataName] = this.valueObj
-      }
-      return res
+      // 返回验证结果和当前页面数据
+      return { res, data: this.valueObj }
     }
   },
   watch: {

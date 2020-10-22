@@ -2,7 +2,7 @@
  * @Author: xiangjie
  * @Date: 2020-01-07 16:44:45
  * @Last Modified by: xiangjie
- * @Last Modified time: 2020-10-21 09:43:21
+ * @Last Modified time: 2020-10-21 11:48:14
  */
 
 export default [
@@ -35,5 +35,11 @@ export default [
     name: 'transmitFive',
     meta: { title: '组件传值 Demo_5' },
     component: () => import('./transmit5')
+  },
+  {
+    path: '/transmitSix',
+    name: 'transmitSix',
+    meta: { title: '组件传值 Demo_6' },
+    component: () => import('./transmit6')
   }
 ]

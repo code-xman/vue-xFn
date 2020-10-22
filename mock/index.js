@@ -17,7 +17,7 @@ Mock.mock('/api/proxy/virtualRolling/addData', () => {
   }
 })
 
-Mock.mock('/api/proxy/virtualRolling/aaa', {
+Mock.mock('/api/proxy/virtualRolling/aaa', 'post', {
   ok: true,
   data: {
     // 标题

@@ -1,6 +1,8 @@
 <template>
-  <div class="transmitFive" flex="dir:top">
-    <p class="blueBG-text" flex-box="0">多层组件传值,provide/inject解决方案</p>
+  <div class="transmitSix" flex="dir:top">
+    <p class="blueBG-text" flex-box="0">
+      tab页在触发子组件验证时，子组件返回验证结果和数据，再由父组件判断是否进行下一步
+    </p>
     <div class="tabs-box" flex-box="1">
       <el-tabs v-model="activeName">
         <el-tab-pane
@@ -9,7 +11,7 @@
           :label="tabItem.label"
           :name="tabItem.name"
         >
-          <fiveSonOne :ref="tabItem.ref" :tabDataName="tabItem.ref" />
+          <sixSon :ref="tabItem.ref" :tabDataName="tabItem.ref" />
         </el-tab-pane>
       </el-tabs>
     </div>
@@ -23,17 +25,10 @@
 
 <script>
 import bottomBtn from '@/globalComponents/bottomBtn'
-import fiveSonOne from './transmitChildren/fiveSon1'
+import sixSon from './transmitChildren/sixSon'
 export default {
-  name: 'transmitFive',
-  components: { bottomBtn, fiveSonOne },
-  // provide 声明子组件可获取并使用的数据；
-  // 但只有其是可监听的对象(eg.this.tabData)时才会动态响应，否则(eg.'aaa')不会。
-  provide () {
-    return {
-      tabData: this.tabData
-    }
-  },
+  name: 'transmitSix',
+  components: { bottomBtn, sixSon },
   data () {
     return {
       activeName: 'form-1',
@@ -41,12 +36,12 @@ export default {
         {
           label: '表单1',
           name: 'form-1',
-          ref: 'fiveSon1'
+          ref: 'sixSon1'
         },
         {
           label: '表单2',
           name: 'form-2',
-          ref: 'fiveSon2'
+          ref: 'sixSon2'
         }
       ],
       btnList: [
@@ -64,7 +59,6 @@ export default {
       ],
       // 是否存在提示
       hasWarning: false,
-      // tab各表单数据
       tabData: {}
     }
   },
@@ -73,20 +67,27 @@ export default {
       switch (type) {
         case 'getData':
           this.hasWarning = false
+
           this.tabList.forEach(async (tabItem, index) => {
-            const res = await this.$refs[tabItem.ref][0].validate()
+            // 接收验证结果和子组件数据
+            const { res, data } = await this.$refs[tabItem.ref][0].validate()
             if (!res && !this.hasWarning) {
               this.hasWarning = true
               this.$utils.tipsWarning(`${tabItem.label}填写有误`)
               return false
+            } else {
+              console.log(`${tabItem.label}填写正确`)
+              // 通过验证后进行赋值
+              this.tabData[tabItem.ref] = data
             }
           })
           Promise.all(this.tabList).then(() => {
+            // 这里奇奇怪怪的，console和devtools的内容经常不一样
             console.log('tabData :>> ', this.tabData)
-            if (this.tabData.fiveSon2) {
-              console.log('fiveSon2 :>> ', this.tabData.fiveSon2)
+            if (this.tabData.sixSon2) {
+              console.log('sixSon2 :>> ', this.tabData.sixSon2)
             } else {
-              console.log('没有 fiveSon2')
+              console.log('没有sixSon2')
             }
           })
           break
@@ -102,7 +103,7 @@ export default {
 
 <style lang="less" scoped>
 @import './index.less';
-.transmitFive {
+.transmitSix {
   height: 100%;
 }
 /* .tabs-box {
