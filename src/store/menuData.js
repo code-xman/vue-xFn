@@ -61,6 +61,16 @@ const menuData = {
           type: 'transmitSix'
         }
       ]
+    },
+    // css Demo
+    {
+      title: 'Css Demo',
+      btnList: [
+        {
+          name: 'css Demo_1',
+          type: 'cssOne'
+        }
+      ]
     }
   ]
 }
