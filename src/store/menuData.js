@@ -71,6 +71,16 @@ const menuData = {
           type: 'cssOne'
         }
       ]
+    },
+    // VDOM更新原理 查找保留数据
+    {
+      title: 'VDOM 查找保留数据/最长公共子序列',
+      btnList: [
+        {
+          name: '查找保留数据 Demo_1',
+          type: 'findStayOne'
+        }
+      ]
     }
   ]
 }
