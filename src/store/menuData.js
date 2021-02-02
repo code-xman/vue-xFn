@@ -72,6 +72,16 @@ const menuData = {
         }
       ]
     },
+    // 多位计算器
+    {
+      title: '多位计算器 切位计算',
+      btnList: [
+        {
+          name: '多位计算器',
+          type: 'calculator'
+        }
+      ]
+    },
     // 马拉车算法 找回最长文字符串
     {
       title: '马拉车算法 找最长回文字符串',
