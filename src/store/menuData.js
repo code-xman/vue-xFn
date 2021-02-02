@@ -72,6 +72,16 @@ const menuData = {
         }
       ]
     },
+    // 马拉车算法 找回最长文字符串
+    {
+      title: '马拉车算法 找最长回文字符串',
+      btnList: [
+        {
+          name: '马拉车算法 Demo_1',
+          type: 'manacher'
+        }
+      ]
+    },
     // VDOM更新原理 查找保留数据
     {
       title: 'VDOM 查找保留数据/最长公共子序列',
