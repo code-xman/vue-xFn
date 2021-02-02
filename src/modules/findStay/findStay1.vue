@@ -49,17 +49,17 @@ export default {
     },
     handleData () {
       // 获取 新数组 各项在原数组的index， 新元素则为 -1
-      var indexArr = this.newArr.map(item => {
+      let indexArr = this.newArr.map(item => {
         return this.oldArr.indexOf(item)
       })
       console.log('indexArr :>> ', indexArr)
 
       // 仅需length
-      var arrlen = []
+      let arrlen = []
       // 二维数据
-      var arr2D = []
+      let arr2D = []
       // 最 大/右 数据的index
-      var rightItemIndex = 0
+      let rightItemIndex = 0
 
       // 边界判断
       if (indexArr.length < 1) {
@@ -83,7 +83,7 @@ export default {
         } else {
           // 替换数据
           // 找到替换数据的index data数据中的第一个大于item的index
-          var replaceIndex = arrlen.findIndex(rItem => rItem > item)
+          let replaceIndex = arrlen.findIndex(rItem => rItem > item)
           arrlen[replaceIndex] = item
         }
       })
@@ -120,8 +120,8 @@ export default {
         })
       })
       console.log('arr2D :>> ', arr2D)
-      var i = arr2D.length - 1
-      var j = arr2D[0].length - 1
+      let i = arr2D.length - 1
+      let j = arr2D[0].length - 1
       while (i >= 0 && j >= 0) {
         if (this.newArr[i] === this.oldArr[j]) {
           this.stayData.push(this.newArr[i])
