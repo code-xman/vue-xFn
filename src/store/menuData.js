@@ -69,6 +69,20 @@ const menuData = {
         {
           name: 'css Demo_1',
           type: 'cssOne'
+        },
+        {
+          name: 'css 时间翻牌',
+          type: 'cssTwo'
+        }
+      ]
+    },
+    // cavans
+    {
+      title: 'Cavans Demo',
+      btnList: [
+        {
+          name: 'cavans Demo_1',
+          type: 'cavansOne'
         }
       ]
     },
