@@ -1,20 +1,5 @@
 <template>
-  <div class="home">
-    <div
-      class="btnGroup"
-      v-for="(groupBtn, groupIndex) in btnGroups"
-      :key="groupIndex"
-    >
-      <div class="title-btnGroup">{{ groupBtn.title }}</div>
-      <el-button
-        type="primary"
-        v-for="(btn, index) in groupBtn.btnList"
-        :key="index"
-        @click="btnClick(btn.type)"
-        >{{ btn.name }}</el-button
-      >
-    </div>
-  </div>
+  <div class="home" flex></div>
 </template>
 
 <script>
@@ -25,31 +10,15 @@ export default {
       btnGroups: this.$store.state.menuData.btnGroups
     }
   },
-  methods: {
-    btnClick (type) {
-      switch (type) {
-        case 'autoOne':
-          this.$router.push({
-            name: 'AttendanceOne'
-          })
-          break
-        case 'autoTwo':
-          this.$router.push({
-            name: 'AttendanceTwo'
-          })
-          break
-        default:
-          this.$router.push({
-            name: type
-          })
-          break
-      }
-    }
-  }
+  methods: {}
 }
 </script>
 
 <style scoped>
+.home {
+  height: 100%;
+}
+
 .btnGroup {
   margin-bottom: 20px;
 }
