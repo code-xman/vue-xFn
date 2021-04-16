@@ -88,6 +88,10 @@ const menuData = {
         {
           name: 'cavans Demo_1',
           type: 'cavansOne'
+        },
+        {
+          name: 'echarts Demo_1',
+          type: 'echartsOne'
         }
       ]
     },
