@@ -95,6 +95,16 @@ const menuData = {
         }
       ]
     },
+    {
+      title: 'Promise Demo',
+      type: 'PromiseDemo',
+      btnList: [
+        {
+          name: 'Promise Demo_1',
+          type: 'promiseOne'
+        }
+      ]
+    },
     // 多位计算器
     {
       title: '多位计算器 切位计算',
