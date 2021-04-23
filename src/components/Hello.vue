@@ -10,7 +10,16 @@
             :index="`${groupIndex}`"
           >
             <template slot="title">
-              <span>{{ groupBtn.title }}</span>
+              <!-- 菜单名称超长后 添加tooltip -->
+              <el-tooltip
+                v-if="groupBtn.title.length > 14"
+                effect="dark"
+                placement="right"
+                :content="groupBtn.title"
+              >
+                <span>{{ groupBtn.title }}</span>
+              </el-tooltip>
+              <span v-else>{{ groupBtn.title }}</span>
             </template>
             <el-menu-item-group>
               <el-menu-item
@@ -19,7 +28,16 @@
                 :index="`${groupIndex}-${index}`"
                 @click="btnClick(btn.type)"
               >
-                {{ btn.name }}
+                <!-- 菜单名称超长后 添加tooltip -->
+                <el-tooltip
+                  v-if="btn.name.length > 14"
+                  effect="dark"
+                  placement="right"
+                  :content="btn.name"
+                >
+                  <div> {{ btn.name }} </div>
+                </el-tooltip>
+                <span v-else> {{ btn.name }} </span>
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -79,6 +97,24 @@ export default {
   }
   .container {
     padding: 10px;
+  }
+}
+.el-submenu__title{
+  span{
+    display: inline-block;
+    max-width: 220px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+.el-menu{
+  .el-menu-item{
+    display: inline-block;
+    max-width: 240px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 </style>
