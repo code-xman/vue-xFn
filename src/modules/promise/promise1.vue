@@ -23,8 +23,15 @@ export default {
       numType: '偶数',
       btnList: [
         {
-          name: 'next one',
-          type: 'todo',
+          name: 'TODO A',
+          type: 'todoA',
+          options: {
+            type: 'primary'
+          }
+        },
+        {
+          name: 'TODO B',
+          type: 'todoB',
           options: {
             type: 'primary'
           }
@@ -35,9 +42,14 @@ export default {
   methods: {
     bottomBtnClick (type) {
       switch (type) {
-        case 'todo':
-          this.todo()
+        case 'todoA': {
+          this.todoA()
           break
+        }
+        case 'todoB': {
+          this.todoB()
+          break
+        }
 
         default:
           break
@@ -49,7 +61,7 @@ export default {
     errorFn () {
       console.log('error')
     },
-    todo () {
+    todoA () {
       this.num++
       const aPromise = new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -82,6 +94,25 @@ export default {
         console.log('后续then的res是', res)
       })
       console.log('2')
+    },
+    todoB () {
+      const bPromise = new Promise(resolve => {
+        setTimeout(() => {
+          console.log('1s后')
+          resolve({
+            state: true,
+            data: {
+              a: 111,
+              b: '222'
+            }
+          })
+        }, 1000)
+      })
+      bPromise.then(res => {
+        if (res.state) {
+          console.log('res.data :>> ', res.data)
+        }
+      })
     }
   }
 }
