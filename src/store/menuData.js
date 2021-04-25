@@ -80,6 +80,17 @@ const menuData = {
         }
       ]
     },
+    // splitPane
+    {
+      title: 'splitPane Demo',
+      type: 'splitPaneDemo',
+      btnList: [
+        {
+          name: 'splitPane Demo',
+          type: 'splitPane'
+        }
+      ]
+    },
     // cavans
     {
       title: 'Cavans Demo',
@@ -95,6 +106,7 @@ const menuData = {
         }
       ]
     },
+    // Promise
     {
       title: 'Promise Demo',
       type: 'PromiseDemo',
