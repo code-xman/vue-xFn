@@ -88,6 +88,10 @@ const menuData = {
         {
           name: 'splitPane Demo',
           type: 'splitPane'
+        },
+        {
+          name: 'useBaseSplit Demo',
+          type: 'useBaseSplit'
         }
       ]
     },
