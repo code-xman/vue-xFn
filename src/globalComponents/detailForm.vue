@@ -12,6 +12,7 @@
         <!-- el-form-item prop需绑定对应字段 否则form验证无效 -->
         <el-form-item
           class="item"
+          :style="`width: ${itemWidth}`"
           :key="index"
           :prop="item.name"
           :label="item.label"
@@ -53,6 +54,10 @@ export default {
     labelWidth: {
       type: String,
       default: '100px'
+    },
+    itemWidth: {
+      type: String,
+      default: '45%'
     }
   },
   watch: {
@@ -92,7 +97,7 @@ export default {
   flex-wrap: wrap;
 }
 .item {
-  width: 45%;
+  // width: 45%;
   padding: 0 20px;
 }
 
