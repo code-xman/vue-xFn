@@ -69,6 +69,16 @@ const tipsSuccess = msg => {
   })
 }
 
+/**
+ * 下划线转驼峰
+ * @param {String} str 需进行转换的字符串
+ * @param {String} a replace中正则匹配的字符串片段
+ * @param {String} b replace中正则匹配的字符串片段中第一个（）中的片段
+ */
+const underlineToCamel = str => str.replace(/_([a-z])/g, function (a, b) {
+  return b.toUpperCase()
+})
+
 const utils = {
   copy,
   formatToTimeStamp,
@@ -76,6 +86,7 @@ const utils = {
   tipsWarning,
   tipsErr,
   tipsSuccess,
+  underlineToCamel,
   install (Vue) {
     Vue.prototype.$utils = utils
   }
