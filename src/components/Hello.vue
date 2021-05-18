@@ -35,7 +35,7 @@
                   placement="right"
                   :content="btn.name"
                 >
-                  <div> {{ btn.name }} </div>
+                  <div>{{ btn.name }}</div>
                 </el-tooltip>
                 <span v-else> {{ btn.name }} </span>
               </el-menu-item>
@@ -44,7 +44,9 @@
         </el-menu>
       </el-aside>
       <el-container class="container" flex-box="1">
-        <router-view></router-view>
+        <transition name="scale" mode="out-in">
+          <router-view></router-view>
+        </transition>
       </el-container>
     </div>
   </div>
@@ -99,8 +101,8 @@ export default {
     padding: 10px;
   }
 }
-.el-submenu__title{
-  span{
+.el-submenu__title {
+  span {
     display: inline-block;
     max-width: 220px;
     overflow: hidden;
@@ -108,13 +110,23 @@ export default {
     text-overflow: ellipsis;
   }
 }
-.el-menu{
-  .el-menu-item{
+.el-menu {
+  .el-menu-item {
     display: inline-block;
     max-width: 240px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
+}
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.5s ease;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.9);
 }
 </style>

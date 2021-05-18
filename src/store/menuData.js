@@ -77,10 +77,14 @@ const menuData = {
         {
           name: 'css 时间翻牌',
           type: 'cssTwo'
+        },
+        {
+          name: 'css 转圈圈',
+          type: 'cssThree'
         }
       ]
     },
-    // splitPane
+    // splitPane 拖动组件
     {
       title: 'splitPane Demo',
       type: 'splitPaneDemo',

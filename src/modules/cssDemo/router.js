@@ -2,7 +2,7 @@
  * @Author: xiangjie
  * @Date: 2020-12-22 10:10:09
  * @Last Modified by: xiangjie
- * @Last Modified time: 2021-02-22 11:27:43
+ * @Last Modified time: 2021-05-17 09:37:19
  */
 
 export default [
@@ -17,5 +17,11 @@ export default [
     path: 'cssTwo',
     meta: { title: 'Css 时间翻牌' },
     component: () => import('./css2.vue')
+  },
+  {
+    name: 'cssThree',
+    path: 'cssThree',
+    meta: { title: 'Css 转圈圈' },
+    component: () => import('./css3.vue')
   }
 ]
