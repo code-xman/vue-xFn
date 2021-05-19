@@ -81,6 +81,10 @@ const menuData = {
         {
           name: 'css 转圈圈',
           type: 'cssThree'
+        },
+        {
+          name: 'css 充电',
+          type: 'cssCharge'
         }
       ]
     },

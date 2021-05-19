@@ -7,7 +7,9 @@
 <script>
 export default {
   name: 'turnAround',
-  setup () {}
+  data () {
+    return {}
+  }
 }
 </script>
 <style lang="less" scoped>
