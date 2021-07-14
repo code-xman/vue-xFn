@@ -129,6 +129,17 @@ const menuData = {
         }
       ]
     },
+    // 数据处理
+    {
+      title: '数据处理',
+      type: 'handleData',
+      btnList: [
+        {
+          name: '处理树结构数据',
+          type: 'handleTree'
+        }
+      ]
+    },
     // 多位计算器
     {
       title: '多位计算器 切位计算',

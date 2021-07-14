@@ -6,7 +6,7 @@
         <el-menu class="menu">
           <el-submenu
             v-for="(groupBtn, groupIndex) in btnGroups"
-            :key="groupIndex"
+            :key="groupBtn.type"
             :index="`${groupIndex}`"
           >
             <template slot="title">
