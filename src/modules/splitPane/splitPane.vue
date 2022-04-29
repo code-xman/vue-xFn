@@ -54,6 +54,10 @@ export default {
     console.log('object :>> ', this.$refs.splitPane.getBoundingClientRect())
     // 获取splitPane的位置信息
     this.splitPaneObj = this.$refs.splitPane.getBoundingClientRect()
+  },
+  destroyed () {
+    // 松开鼠标后 移除监听事件
+    document.removeEventListener('mouseup', this.handleMouseup)
   }
 }
 </script>

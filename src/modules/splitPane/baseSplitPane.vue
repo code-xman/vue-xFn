@@ -77,6 +77,10 @@ export default {
     this.paneLeftWidth = this.initPaneLeftWidth
     // 获取 baseSplitPane 的位置信息
     this.splitPaneObj = this.$refs.baseSplitPane.getBoundingClientRect()
+  },
+  destroyed () {
+    // 松开鼠标后 移除监听事件
+    document.removeEventListener('mouseup', this.handleMouseup)
   }
 }
 </script>

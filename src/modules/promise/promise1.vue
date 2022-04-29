@@ -1,7 +1,9 @@
 <!-- Created by xj on 2021-04-22. promiseOne -->
 <template>
   <div class='promiseOne' flex="dir:top">
-    <p class="blueBG-text" flex-box="0">Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一</p>
+    <p class="blueBG-text" flex-box="0">
+      Promise是JS异步编程中的重要概念，异步抽象处理对象，是目前比较流行Javascript异步编程解决方案之一
+    </p>
     <div flex-box="1">
       <p>{{num}}是{{numType}}</p>
     </div>
