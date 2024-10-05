@@ -28,4 +28,3 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 ## 测试
 1. 测试1
-2. 测试2
